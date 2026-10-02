@@ -20,7 +20,7 @@ O foco central desta etapa é evidenciar o domínio da linguagem de marcação c
 ---
 
 ## Link do Site Publicado
-- **GitHub Pages:** [Acesse o site publicado aqui](https://github.com/NivekF2802/site-pessoal)
+- **GitHub Pages:** [Acesse o site publicado aqui](https://nivekf2802.github.io/site-pessoal/)
 
 ---
 
