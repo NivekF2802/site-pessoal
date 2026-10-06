@@ -1,8 +1,4 @@
-/* ==========================================================================
-   1. VARIÁVEIS DE TEMA & DESIGN SYSTEM
-   ========================================================================== */
 :root {
-  /* Paleta de Cores (Dark Tech Moderna) */
   --bg-body: #0b1120;
   --bg-surface: #131c31;
   --bg-surface-alt: #1e293b;
@@ -17,7 +13,6 @@
   --border-color: #334155;
   --border-light: rgba(255, 255, 255, 0.08);
 
-  /* Tipografia & Espaçamentos */
   --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --container-max: 1100px;
   --radius-sm: 6px;
@@ -27,9 +22,6 @@
   --transition: all 0.25s ease-in-out;
 }
 
-/* ==========================================================================
-   2. RESET & BASE
-   ========================================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -75,9 +67,6 @@ ul {
   margin: 0 auto;
 }
 
-/* ==========================================================================
-   3. CABEÇALHO / NAVBAR (LANDING PAGE FIXED NAV)
-   ========================================================================== */
 .site-header {
   position: sticky;
   top: 0;
@@ -137,9 +126,6 @@ ul {
   color: #fff !important;
 }
 
-/* ==========================================================================
-   4. HERO SECTION (DESTAQUE DA LANDING PAGE)
-   ========================================================================== */
 .hero-section {
   padding: 5rem 0 4rem;
   background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 45%);
@@ -198,7 +184,6 @@ ul {
   flex-wrap: wrap;
 }
 
-/* Botões */
 .btn {
   display: inline-block;
   padding: 0.75rem 1.6rem;
@@ -244,7 +229,6 @@ ul {
   color: var(--text-main);
 }
 
-/* Foto com Borda e Moldura */
 .hero-image {
   flex: 0.8;
   display: flex;
@@ -275,9 +259,6 @@ ul {
   margin-top: 0.8rem;
 }
 
-/* ==========================================================================
-   5. SEÇÕES DE CONTEÚDO & CARDS
-   ========================================================================== */
 .content-section {
   padding: 4.5rem 0;
   border-top: 1px solid var(--border-light);
@@ -300,7 +281,6 @@ ul {
   margin-top: 0.2rem;
 }
 
-/* Card Padrão */
 .card {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-color);
@@ -314,7 +294,6 @@ ul {
   border-color: rgba(56, 189, 248, 0.4);
 }
 
-/* Seção Sobre Mim */
 .card-sobre p {
   color: var(--text-muted);
   margin-bottom: 1rem;
@@ -340,9 +319,6 @@ ul {
   color: var(--text-muted);
 }
 
-/* ==========================================================================
-   6. LINHA DO TEMPO (EXPERIÊNCIA)
-   ========================================================================== */
 .timeline {
   display: flex;
   flex-direction: column;
@@ -383,9 +359,6 @@ ul {
   color: var(--text-muted);
 }
 
-/* ==========================================================================
-   7. SLIDESHOW NO MEIO DA PÁGINA (PURE CSS)
-   ========================================================================== */
 .slideshow-wrapper {
   position: relative;
   overflow: hidden;
@@ -394,12 +367,10 @@ ul {
   border: 1px solid var(--border-color);
 }
 
-/* Ocultar os radio buttons */
 .slide-radio {
   display: none;
 }
 
-/* Trilho que desliza */
 .slides-track {
   display: flex;
   width: 300%;
@@ -450,7 +421,6 @@ ul {
   color: var(--text-main);
 }
 
-/* Controle do deslocamento do trilho por Radio Buttons */
 #slide-1:checked ~ .slides-track {
   transform: translateX(0%);
 }
@@ -461,7 +431,6 @@ ul {
   transform: translateX(-66.6666%);
 }
 
-/* Navegação por Bullets (Bolinhas) */
 .slideshow-nav {
   display: flex;
   justify-content: center;
@@ -482,7 +451,6 @@ ul {
   background-color: var(--text-muted);
 }
 
-/* Ativação visual da bolinha correspondente */
 #slide-1:checked ~ .slideshow-nav label[for="slide-1"],
 #slide-2:checked ~ .slideshow-nav label[for="slide-2"],
 #slide-3:checked ~ .slideshow-nav label[for="slide-3"] {
@@ -490,9 +458,6 @@ ul {
   transform: scale(1.25);
 }
 
-/* ==========================================================================
-   8. GRIDS DE CARDS (FORMAÇÃO, TECNOLOGIAS E PROJETOS)
-   ========================================================================== */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -519,7 +484,6 @@ ul {
   margin-bottom: 0.8rem;
 }
 
-/* Grid de Tecnologias */
 .tech-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -550,7 +514,6 @@ ul {
   font-size: 0.92rem;
 }
 
-/* Tags de Projetos */
 .project-card h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
@@ -572,9 +535,6 @@ ul {
   font-weight: 500;
 }
 
-/* ==========================================================================
-   9. PERFIS E CONEXÕES
-   ========================================================================== */
 .profiles-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -628,9 +588,6 @@ ul {
   font-size: 1.2rem;
 }
 
-/* ==========================================================================
-   10. FORMULÁRIO DE CONTATO ESTILIZADO
-   ========================================================================== */
 .form-wrapper {
   max-width: 680px;
   margin: 0 auto;
@@ -681,9 +638,6 @@ ul {
   flex-wrap: wrap;
 }
 
-/* ==========================================================================
-   11. RODAPÉ
-   ========================================================================== */
 .site-footer {
   border-top: 1px solid var(--border-color);
   padding: 2.5rem 0;
@@ -710,9 +664,6 @@ ul {
   text-decoration: underline;
 }
 
-/* ==========================================================================
-   12. RESPONSIVIDADE (MEDIA QUERIES)
-   ========================================================================== */
 @media (max-width: 900px) {
   .hero-content {
     flex-direction: column-reverse;
