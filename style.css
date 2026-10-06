@@ -1,0 +1,777 @@
+/* ==========================================================================
+   1. VARIÁVEIS DE TEMA & DESIGN SYSTEM
+   ========================================================================== */
+:root {
+  /* Paleta de Cores (Dark Tech Moderna) */
+  --bg-body: #0b1120;
+  --bg-surface: #131c31;
+  --bg-surface-alt: #1e293b;
+  --bg-header: rgba(11, 17, 32, 0.88);
+  
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --accent: #38bdf8;
+  
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --border-light: rgba(255, 255, 255, 0.08);
+
+  /* Tipografia & Espaçamentos */
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --container-max: 1100px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.35);
+  --transition: all 0.25s ease-in-out;
+}
+
+/* ==========================================================================
+   2. RESET & BASE
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  font-family: var(--font-family);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   3. CABEÇALHO / NAVBAR (LANDING PAGE FIXED NAV)
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--bg-header);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.9rem 0;
+}
+
+.nav-container {
+  width: 90%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--text-main);
+}
+
+.btn-nav {
+  padding: 0.4rem 1rem;
+  background-color: rgba(37, 99, 235, 0.15);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-sm);
+  color: var(--accent) !important;
+}
+
+.btn-nav:hover {
+  background-color: var(--primary);
+  color: #fff !important;
+}
+
+/* ==========================================================================
+   4. HERO SECTION (DESTAQUE DA LANDING PAGE)
+   ========================================================================== */
+.hero-section {
+  padding: 5rem 0 4rem;
+  background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 45%);
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.hero-text {
+  flex: 1.2;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.85rem;
+  background-color: rgba(56, 189, 248, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 50px;
+  margin-bottom: 1.2rem;
+}
+
+.hero-title {
+  font-size: clamp(2.3rem, 4vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.hero-description {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 580px;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Botões */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+}
+
+.btn-secondary {
+  background-color: var(--bg-surface-alt);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--border-color);
+  color: #fff;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+}
+
+.btn-outline:hover {
+  border-color: var(--text-muted);
+  color: var(--text-main);
+}
+
+/* Foto com Borda e Moldura */
+.hero-image {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-figure {
+  text-align: center;
+}
+
+.profile-img {
+  width: 250px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--accent);
+  box-shadow: var(--shadow), 0 0 30px rgba(56, 189, 248, 0.15);
+  transition: var(--transition);
+}
+
+.profile-img:hover {
+  transform: scale(1.02);
+  border-color: var(--primary);
+}
+
+.profile-caption {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.8rem;
+}
+
+/* ==========================================================================
+   5. SEÇÕES DE CONTEÚDO & CARDS
+   ========================================================================== */
+.content-section {
+  padding: 4.5rem 0;
+  border-top: 1px solid var(--border-light);
+}
+
+.section-header {
+  margin-bottom: 2.2rem;
+}
+
+.section-header h2 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--text-main);
+}
+
+.section-tagline {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+/* Card Padrão */
+.card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.8rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.card:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+/* Seção Sobre Mim */
+.card-sobre p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.info-box h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-main);
+}
+
+.styled-list li {
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   6. LINHA DO TEMPO (EXPERIÊNCIA)
+   ========================================================================== */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  border-left: 2px solid var(--border-color);
+  margin-left: 0.5rem;
+  padding-left: 1.8rem;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -2.35rem;
+  top: 1.8rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  border: 3px solid var(--bg-body);
+}
+
+.timeline-date {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.timeline-content h3 {
+  font-size: 1.25rem;
+  margin: 0.3rem 0 0.6rem;
+}
+
+.timeline-content p {
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   7. SLIDESHOW NO MEIO DA PÁGINA (PURE CSS)
+   ========================================================================== */
+.slideshow-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, var(--bg-surface), #1a243b);
+  border: 1px solid var(--border-color);
+}
+
+/* Ocultar os radio buttons */
+.slide-radio {
+  display: none;
+}
+
+/* Trilho que desliza */
+.slides-track {
+  display: flex;
+  width: 300%;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.slide-item {
+  width: 33.3333%;
+  flex-shrink: 0;
+  padding: 0.5rem 1rem;
+}
+
+.slide-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.slide-item h3 {
+  font-size: 1.55rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-main);
+}
+
+.slide-item p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 750px;
+  margin-bottom: 1.5rem;
+}
+
+.slide-tags {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.slide-tags span {
+  font-size: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+}
+
+/* Controle do deslocamento do trilho por Radio Buttons */
+#slide-1:checked ~ .slides-track {
+  transform: translateX(0%);
+}
+#slide-2:checked ~ .slides-track {
+  transform: translateX(-33.3333%);
+}
+#slide-3:checked ~ .slides-track {
+  transform: translateX(-66.6666%);
+}
+
+/* Navegação por Bullets (Bolinhas) */
+.slideshow-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.slide-bullet {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.slide-bullet:hover {
+  background-color: var(--text-muted);
+}
+
+/* Ativação visual da bolinha correspondente */
+#slide-1:checked ~ .slideshow-nav label[for="slide-1"],
+#slide-2:checked ~ .slideshow-nav label[for="slide-2"],
+#slide-3:checked ~ .slideshow-nav label[for="slide-3"] {
+  background-color: var(--accent);
+  transform: scale(1.25);
+}
+
+/* ==========================================================================
+   8. GRIDS DE CARDS (FORMAÇÃO, TECNOLOGIAS E PROJETOS)
+   ========================================================================== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.card-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.card-institution {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.card-period {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+}
+
+/* Grid de Tecnologias */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+}
+
+.tech-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: var(--transition);
+}
+
+.tech-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+}
+
+.tech-card h3 {
+  font-size: 1.15rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.tech-card p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+/* Tags de Projetos */
+.project-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.6rem;
+  background-color: rgba(37, 99, 235, 0.15);
+  color: var(--accent);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   9. PERFIS E CONEXÕES
+   ========================================================================== */
+.profiles-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+
+.profile-link-card {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 1.2rem 1.5rem;
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  transition: var(--transition);
+}
+
+.profile-link-card:hover {
+  border-color: var(--accent);
+  transform: translateX(4px);
+  color: var(--text-main);
+}
+
+.profile-icon {
+  width: 44px;
+  height: 44px;
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.profile-info span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.arrow {
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   10. FORMULÁRIO DE CONTATO ESTILIZADO
+   ========================================================================== */
+.form-wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+.form-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   11. RODAPÉ
+   ========================================================================== */
+.site-footer {
+  border-top: 1px solid var(--border-color);
+  padding: 2.5rem 0;
+  margin-top: 5rem;
+  background-color: var(--bg-body);
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.back-to-top {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.back-to-top:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   12. RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-description {
+    margin: 0 auto 2rem;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    position: static;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem 1rem;
+  }
+
+  .slideshow-wrapper {
+    padding: 1.5rem 1rem;
+  }
+
+  .slide-item h3 {
+    font-size: 1.3rem;
+  }
+
+  .timeline {
+    padding-left: 1.2rem;
+  }
+
+  .timeline-dot {
+    left: -1.75rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
